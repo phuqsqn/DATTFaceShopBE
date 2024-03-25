@@ -8,7 +8,9 @@ module.exports = {
   creatComment: async (req, res, next) => {
     const product_id = req.params.product_id;
     const account_id = req.body.account
+    
     const body = req.body
+    body.createdAt  = Date.now();
     const { error, value } = commentValid(body)
     if (error) {
       throw new ErrorResponse(400, error.message);

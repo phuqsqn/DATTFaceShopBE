@@ -9,7 +9,8 @@ const commentSchema = joi.object({
     .message('Tên Quá Dài')
     .required(),
   start: joi.string().required(),
-  account: joi.string().required(), // cái này cần gì chuyền đâu, xóa đi, cái e cần truyền là gì, là account
+  account: joi.string().required(),
+  createdAt: joi.date(),// cái này cần gì chuyền đâu, xóa đi, cái e cần truyền là gì, là account
 });
 function commentValid(comment) {
   return commentSchema.validate(comment);

@@ -20,6 +20,9 @@ const oderSchema = mongoose.Schema(
             enum: 0,
             default: "0"
         },
+        createdAt:{
+            type: Date,
+          },
         is_payment: {
             type: String,
             enum: ["Browsing", "Confirm", "Success"],

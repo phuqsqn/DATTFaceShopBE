@@ -36,7 +36,8 @@ module.exports = {
   creatOder: async (req, res) => {
     const body = req.body;
     const cart_id = body.cart;
-
+    
+    body.createdAt  = Date.now();
     const [_, oder] = await Promise.all([
       cartModel.findByIdAndUpdate(cart_id, { isOrder: 1 }),
       oderModel.create(body),

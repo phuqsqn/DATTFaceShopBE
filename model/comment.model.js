@@ -14,6 +14,9 @@ const commentSchema = mongoose.Schema(
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'account',
     },
+    createdAt:{
+      type: Date,
+    },
     product: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'product', 
